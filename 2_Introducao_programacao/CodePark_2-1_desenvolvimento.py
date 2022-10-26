@@ -13,7 +13,8 @@
 
 pesoBruto=65000
 quantidadePessoas=18
-quantidadeRodas=3
+quantidadeRodas=4
+
 if(quantidadeRodas < 4):
     print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'a' ")
 elif (pesoBruto > 6000) and (quantidadeRodas >= 4):
