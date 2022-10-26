@@ -11,9 +11,10 @@
 #D: Veículos com quatro rodas ou mais e que acomodam mais de oito pessoas; 
 #E: Veículos com quatro rodas ou mais e com mais de 6000 kg.
 
-pesoBruto=65000
-quantidadePessoas=18
-quantidadeRodas=4
+print("Olá, gostarimos de saber os dados do veiculo que pretende dirigui a fim de lhe informa a categoria de habilitação necessária. ")
+quantidadeRodas = int(input("Quantas rodas possui o veículo?"))
+quantidadePessoas = int(input("Qual a capacidade máxima de ocupantes possui o veículo?"))
+pesoBruto = float(input("Qual o pesso bruto do veículo?"))
 
 if(quantidadeRodas < 4):
     print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'a' ")
