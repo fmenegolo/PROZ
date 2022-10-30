@@ -17,12 +17,12 @@ quantidadePessoas = int(input("Qual a capacidade máxima de ocupantes possui o v
 pesoBruto = float(input("Qual o pesso bruto do veículo?"))
 
 if(quantidadeRodas < 4):
-    print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'a' ")
+    print("Para dirigir este veículo é necessario ter habilitação para dirigir categoria 'A' ")
 elif (pesoBruto > 6000) and (quantidadeRodas >= 4):
-    print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'E' ")
+    print("Para dirigir este veículo é necessario ter habilitação para dirigir categoria 'E' ")
 elif (quantidadePessoas > 8) and (quantidadeRodas >= 4):
-    print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'D' ")
+    print("Para dirigir este veículo é necessario ter habilitação para dirigir categoria 'D' ")
 elif ((pesoBruto >3500) or (pesoBruto<=6000)) and (quantidadeRodas >= 4):
-    print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'C' ")
+    print("Para dirigir este veículo é necessario ter habilitação para dirigir categoria 'C' ")
 else:
-    print("Para diriguir este veiculo é necessario ter habilitação para dirigir veiculos categoria 'B' ")
+    print("Para dirigir este veículo é necessario ter habilitação para dirigir categoria 'B' ")
