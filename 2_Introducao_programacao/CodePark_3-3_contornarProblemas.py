@@ -13,16 +13,17 @@ def quatosAnos(anoNasc,anoAtual):
     elif (anoNasc >= 1922) and (anoNasc < anoAtual):
         idade=anoAtual-anoNasc
     else:
-        raise Exception("")
+        raise Exception("teste erro")
     return idade
 rodar = True
-while(rodar == True)
-    nome = input("insira seu nome: ")
+nome = input("insira seu nome: ")
+while(rodar == True):
+    
     nascidoEm = int(input("Digite o seu ano de nascimento: "))
     anoHoje = 0
     try:
         resp = quatosAnos(nascidoEm, anoHoje)
-        print(resp)
+        print(f"O Sr. {nome} completou ou ira completar {resp} anos neste ano.")
         rodar = False
     except:
-         print("Caracter inválido, por favor digite um número par")
+         print("Caracter inválido, por favor digite um número correto")
