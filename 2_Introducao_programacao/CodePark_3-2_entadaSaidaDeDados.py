@@ -24,10 +24,13 @@ def calculadora2(num1,num2,op):
         res=num1-num2
     elif (op == "3"):
         res=num1*num2
-    elif (op == "4") or (num2 != 0):
-        res=num1/num2
+    elif (op == "4"):
+        if (num2 != 0):
+            res=num1/num2
+        else:
+            raise Exception("Divisão por zero não é possível!")
     else:
-        res=0
+        res = "erro"
     return res
 
 operador = " "
@@ -42,8 +45,12 @@ while operador not in "0":
     if (operador != "0"):
         n1=eval(input("insira o primeiro número: \n"))
         n2=eval(input("insira o segundo número: \n"))
-        res = calculadora2(n1,n2,operador)
-        print(f"Resultado é = {res}\n")
+        try:
+            res = calculadora2(n1,n2,operador)
+            print(f"Resultado é = {res}\n")
+        except Exception as err:
+            print("Ocorreu um erro!")
+            print(err)    
     else:
         break
 print("Operação encerrada")
