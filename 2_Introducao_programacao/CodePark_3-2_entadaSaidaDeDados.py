@@ -28,8 +28,8 @@ def calculadora2(num1,num2,op):
         res=num1/num2
     return res
 
-operador = ""
-lista=("1","2","3","4")
+operador = " "
+lista=("0","1","2","3","4")
 
 while operador not in "0":
     operador=str(input("escolha a opção da operação matemática: \n 1 = Soma \n 2 = Subtração \n 3 = Multiplicação \n 4 = Divisão \n 0 = Sair \n"))
@@ -41,7 +41,7 @@ while operador not in "0":
         n1=eval(input("insira o primeiro número: \n"))
         n2=eval(input("insira o segundo número: \n"))
         res = calculadora2(n1,n2,operador)
-        print(f"Resultado é = {res}")
+        print(f"Resultado é = {res}\n")
     else:
         break
 print("Operação encerrada")
