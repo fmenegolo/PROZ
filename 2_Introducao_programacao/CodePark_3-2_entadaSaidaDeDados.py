@@ -24,8 +24,10 @@ def calculadora2(num1,num2,op):
         res=num1-num2
     elif (op == "3"):
         res=num1*num2
-    elif (op == "4"):
+    elif (op == "4") or (num2 != 0):
         res=num1/num2
+    else:
+        res=0
     return res
 
 operador = " "
