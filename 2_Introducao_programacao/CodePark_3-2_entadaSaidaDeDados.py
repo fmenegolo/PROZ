@@ -31,8 +31,8 @@ def calculadora2(num1,num2,op):
 operador = ""
 lista=("1","2","3","4")
 
-operador=str(input("escolha a opção da operação matemática: \n 1 = Soma \n 2 = Subtração \n 3 = Multiplicação \n 4 = Divisão \n 0 = Sair \n"))
 while operador not in "0":
+    operador=str(input("escolha a opção da operação matemática: \n 1 = Soma \n 2 = Subtração \n 3 = Multiplicação \n 4 = Divisão \n 0 = Sair \n"))
     while operador not in lista:
         print("Essa opção não existe!\n")
         operador=str(input("escolha a opção da operação matemática: \n 1 = Soma \n 2 = Subtração \n 3 = Multiplicação \n 4 = Divisão \n 0 = Sair \n"))
