@@ -1,2 +1,7 @@
 git add
 git add . #adiciona tudo
+
+
+git commit -m "texto commit"
+
+git status
