@@ -1,0 +1,2 @@
+minhaLista = []
+meuObjeto = str(input(""))
