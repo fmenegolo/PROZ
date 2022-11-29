@@ -1,0 +1,25 @@
+body {
+    background-color: lightgreen;
+}
+
+h1 {
+    color: green;
+    text-align: center;
+}
+
+strong {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: seagreen;
+}
+
+div{
+    background-color:grey
+}
+
+.caixa {
+    background-color: sienna
+}
+
+#ultima-caixa {
+    background-color: darkgreen
+}
