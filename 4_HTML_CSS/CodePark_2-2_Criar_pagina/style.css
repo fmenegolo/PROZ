@@ -1,0 +1,15 @@
+h1 {
+    font-size: 44px;
+    font-family: Helvetica;
+    color: brown;
+    padding: 5px;
+    background-color: chocolate;
+}
+
+h2{
+  font-size: 35px;
+  font-family: 'Helvetica';
+  color: azure;
+  padding: 5px;  
+  background-color: chocolate;
+}
