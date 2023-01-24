@@ -1,0 +1,22 @@
+div {
+    color: #C41818;
+    font-size: 4rem;
+}
+
+section {
+    background-color: lightblue;
+    width: 250px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borda-azul {
+    border: solid 4px darkblue;
+}
+
+.texto-novo {
+    color: #DC143C;
+    font-weight: 800;
+}
