@@ -65,7 +65,7 @@ botaoLimpar.addEventListener("click", () => {
 
 //Eventos de Mouse
 let botaoPassou = document.querySelector(".botao-passou");
-let span = document.querySelector("span");
+let span = document.querySelector(".span");
 let section2 = document.querySelector(".section2");
 
 //Evento mouseover é diparado quando o mouse passa por cima
@@ -92,3 +92,48 @@ function fazerDoisClicks(){
     section2.innerText = "Fez duplo click!"
 };
 botaoPassou.addEventListener("dblclick", fazerDoisClicks);
+
+// capturar informação de evento
+// 1 capturar todos elementos do DOM
+let elementoClicado = document.getElementById("elemento-clicado");
+let botaoTempo = document.getElementById("botao-tempo");
+let tempo = document.getElementById("tempo");
+
+//propriedade timeStamp
+
+botaoTempo.addEventListener("click", function(evento){
+    console.log(evento.timeStamp);
+    tempo.innerText = evento.timeStamp;
+});
+
+//propriedade target
+//em situaçoes reais recomendavel usar um unico elemento (ou unico pai) ao inves de document
+document.addEventListener("click", function(e){
+    console.log(e.target);
+    elementoClicado.innerText = e.target.id;
+});
+
+// eventos de teclado
+let keyText = document.querySelector("#key-text");
+let codeText = document.querySelector("#code-text");
+let quadrado = document.querySelector("#quadrado");
+let distanciaDaEsquerda = 0
+
+// sera usado diretamente o objeto document para dispará-lo sem precisar selecionar nenhum elemento especifico
+document.addEventListener("keyup", (e)=> {
+    //console.log(e.key); // para teclas com valores unicos
+    //console.log(e.code); // para teclas que compartilham valores com outras
+    keyText.innerText = e.key;
+    codeText.innerText = e.code;
+});
+
+//Deslocar um elemento
+document.addEventListener("keydown", (e)=>{
+    if(e.code == "ArrowRight"){
+        //console.log("Apertou a seta à direita");
+        distanciaDaEsquerda = distanciaDaEsquerda + 10;
+        console.log(distanciaDaEsquerda);
+
+        quadrado.style.left = distanciaDaEsquerda + "px"
+    };
+});
