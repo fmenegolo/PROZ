@@ -20,3 +20,12 @@ section {
     color: #DC143C;
     font-weight: 800;
 }
+
+span{
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+section{
+    margin-top: 1rem;
+}
