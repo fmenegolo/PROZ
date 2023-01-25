@@ -134,6 +134,24 @@ document.addEventListener("keydown", (e)=>{
         distanciaDaEsquerda = distanciaDaEsquerda + 10;
         console.log(distanciaDaEsquerda);
 
-        quadrado.style.left = distanciaDaEsquerda + "px"
+        quadrado.style.left = distanciaDaEsquerda + "px";
     };
 });
+
+//PreventDefault e alert
+let linkProz = document.getElementById("link-proz");
+let btnSubmit = document.querySelector("button[type=submit]")
+
+//PreventDefault previne o comportamento padrão
+linkProz.addEventListener("click", (e)=>{
+    e.preventDefault();
+    //Função alert()
+    alert("Não foi possível acessar o link");
+});
+
+btnSubmit.addEventListener("click", (e)=>{
+    alert("Não foi possível enviar os dados do formulário")
+    e.preventDefault()
+    //Funtion alert()   
+});
+
