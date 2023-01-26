@@ -155,3 +155,28 @@ btnSubmit.addEventListener("click", (e)=>{
     //Funtion alert()   
 });
 
+// eventos de formulários
+//setup de arquivos
+let inputEmail = document.getElementById("email");
+let inputIdade = document.getElementById("idade");
+let formulario = document.querySelector("form");
+
+//Evento Focus
+inputEmail.addEventListener("focus",(e)=>{
+    inputEmail.style.backgroundColor = "lightgreen";
+});
+
+//Evento Blur
+inputEmail.addEventListener("blur", (e)=>{
+    e.target.style.backgroundColor = "";
+});
+
+//Evento change
+inputIdade.addEventListener("change", ()=>{
+    alert("Certeza que quer alterar seus dados?");
+
+});
+//Evento Submit
+formulario.addEventListener("submit", ()=>{
+    alert("Dados enviados com sucesso!");
+});
