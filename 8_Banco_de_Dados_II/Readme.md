@@ -168,6 +168,38 @@
     
     Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o link desse projeto no campo ao lado para que outros desenvolvedores possam analisá-lo.
 
+        CREATE DATABASE proz
+        
+        USE proz
 
+       CREATE TABLE code_park1 (
+            id_code_park integer PRIMARY KEY AUTOINCREMENT,
+            nome_atividade Varchar(50) NOT NULL,
+            nome_avaliador Varchar(50) NOT NULL
+        );
 
+        insert into code_park1 (nome_atividade, nome_avaliador) values ('Banco de dados', 'Juliana');
+        insert into code_park1 (nome_atividade, nome_avaliador) values ('HTML', 'Marcos');
+        insert into code_park1 (nome_atividade, nome_avaliador) values ('CSS', 'Tabata');
 
+        CREATE TABLE aluno (
+            id_aluno INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome_aluno Varchar(50) NOT NULL,
+            atividade_id Int,
+            FOREIGN KEY (atividade_id)
+                references code_park1 (id_code_park)
+        );
+
+        insert into aluno (nome_aluno, atividade_id) values ('Regina', '2');
+        insert into aluno (nome_aluno, atividade_id) values ('Batista', '1');
+        insert into aluno (nome_aluno, atividade_id) values ('Fabricio', '3');
+
+        SELECT * 
+        FROM aluno
+
+        SELECT * 
+        FROM code_park1
+
+        select nome_aluno, atividade_id from aluno
+        inner join code_park1
+        on code_park1.id_code_park = aluno.atividade_id;
