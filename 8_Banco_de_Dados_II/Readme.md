@@ -157,49 +157,84 @@
             <nome_da_tabela2> right join <nome_da_tabela1>
             on <nome_da_tabela1>.id_nome_coluna1 = <nome_da_tabela2>.nome_coluna3_id;
 
-3. Desenvolvimento
-    Instruções do projeto
-        Desenvolva um banco de dados e relacione tabelas através de chaves estrangeiras ou nomes de colunas iguais. Siga as instruções:
-        crie uma base de dados; 
-        crie tabelas nessa base de dados;
-        em cada tabela, adicione atributos;
-        insira dados em cada tabela;
-        utilize os comandos Joins para realizar consultas nas tabelas. 
-    
-    Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o link desse projeto no campo ao lado para que outros desenvolvedores possam analisá-lo.
-
-        CREATE DATABASE proz
+    2.9. Desenvolvimento
+        Instruções do projeto
+            Desenvolva um banco de dados e relacione tabelas através de chaves estrangeiras ou nomes de colunas iguais. Siga as instruções:
+            crie uma base de dados; 
+            crie tabelas nessa base de dados;
+            em cada tabela, adicione atributos;
+            insira dados em cada tabela;
+            utilize os comandos Joins para realizar consultas nas tabelas. 
         
-        USE proz
+        Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o link desse projeto no campo ao lado para que outros desenvolvedores possam analisá-lo.
 
-       CREATE TABLE code_park1 (
-            id_code_park integer PRIMARY KEY AUTOINCREMENT,
-            nome_atividade Varchar(50) NOT NULL,
-            nome_avaliador Varchar(50) NOT NULL
-        );
+            CREATE DATABASE proz
+            
+            USE proz
 
-        insert into code_park1 (nome_atividade, nome_avaliador) values ('Banco de dados', 'Juliana');
-        insert into code_park1 (nome_atividade, nome_avaliador) values ('HTML', 'Marcos');
-        insert into code_park1 (nome_atividade, nome_avaliador) values ('CSS', 'Tabata');
+        CREATE TABLE code_park1 (
+                id_code_park integer PRIMARY KEY AUTOINCREMENT,
+                nome_atividade Varchar(50) NOT NULL,
+                nome_avaliador Varchar(50) NOT NULL
+            );
 
-        CREATE TABLE aluno (
-            id_aluno INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome_aluno Varchar(50) NOT NULL,
-            atividade_id Int,
-            FOREIGN KEY (atividade_id)
-                references code_park1 (id_code_park)
-        );
+            insert into code_park1 (nome_atividade, nome_avaliador) values ('Banco de dados', 'Juliana');
+            insert into code_park1 (nome_atividade, nome_avaliador) values ('HTML', 'Marcos');
+            insert into code_park1 (nome_atividade, nome_avaliador) values ('CSS', 'Tabata');
 
-        insert into aluno (nome_aluno, atividade_id) values ('Regina', '2');
-        insert into aluno (nome_aluno, atividade_id) values ('Batista', '1');
-        insert into aluno (nome_aluno, atividade_id) values ('Fabricio', '3');
+            CREATE TABLE aluno (
+                id_aluno INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome_aluno Varchar(50) NOT NULL,
+                atividade_id Int,
+                FOREIGN KEY (atividade_id)
+                    references code_park1 (id_code_park)
+            );
 
-        SELECT * 
-        FROM aluno
+            insert into aluno (nome_aluno, atividade_id) values ('Regina', '2');
+            insert into aluno (nome_aluno, atividade_id) values ('Batista', '1');
+            insert into aluno (nome_aluno, atividade_id) values ('Fabricio', '3');
 
-        SELECT * 
-        FROM code_park1
+            SELECT * 
+            FROM aluno
 
-        select nome_aluno, atividade_id from aluno
-        inner join code_park1
-        on code_park1.id_code_park = aluno.atividade_id;
+            SELECT * 
+            FROM code_park1
+
+            select nome_aluno, atividade_id from aluno
+            inner join code_park1
+            on code_park1.id_code_park = aluno.atividade_id;
+
+3. Conceber e saber quando utilizar Trigger para melhorar uma ação desejada no banco de dados
+    
+    3.1. oque são triggers (gatilho)
+        é uma chamada gerada automaticamente quando um determinado evento ocorre no banco
+
+        na DDL os triggers são acionados por eventos que afetam a estrutura do BD
+            adicionar, alterar ou remover
+        na DML sao os tipos mais comuns como uma inserção, exclusão ou atualização
+            tipos
+                for ou after
+                    insert
+                    update
+                    delete
+                
+                instead of
+                    insert
+                    update
+                    delete
+                    - os proprios triggers são executados
+                    - assume papel da instrução para consistencia referencial
+                
+                construct trigger
+                    permite criar um novo gatilho 
+                    
+                    - Exemplo de Sintaxe
+                        delimiter//
+                        CRATE TRIGGER nome_trigger
+                        AFTER INSERT ON usuario_voto
+                        FOR EACH ROW
+                        BEGIN
+                        <aqui seria a estrutura do trigger>
+                        END//
+                        delimiter;
+                
